@@ -4,4 +4,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.inventory.model.hardware.ModelComputer;
 
-public interface ModelComputerRepository extends JpaRepository<Long, ModelComputer>{}
+public interface ModelComputerRepository extends JpaRepository<ModelComputer, Long>{}
