@@ -7,4 +7,5 @@ public class RamDTO {
     private Long id;
     private String name;
     private String mark;
+    private String frequency;
 }

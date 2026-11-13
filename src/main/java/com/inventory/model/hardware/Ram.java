@@ -21,4 +21,7 @@ public class Ram {
     
     @Column (name="mark", nullable = false, length = 50)
     private String mark;
+    
+    @Column (name = "frequency", length = 10)
+    private String frequency;
 }

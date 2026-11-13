@@ -7,7 +7,5 @@ import lombok.Data;
 public class TypeComputerDTO {
     private Long id;
     private ComputerType type;
-    private String nameTag;
-
 }
 
