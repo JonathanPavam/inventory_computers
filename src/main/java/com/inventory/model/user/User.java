@@ -36,7 +36,7 @@ public class User implements Serializable{
     @JoinColumn(name = "address_id", nullable = false)
     private Address address;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @Enumerated(EnumType.STRING)
     @JoinColumn(name = "gender_id", nullable = false)
     private Gender gender;
 

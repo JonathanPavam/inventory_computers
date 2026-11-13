@@ -8,4 +8,3 @@ public class TypeComputerDTO {
     private Long id;
     private ComputerType type;
 }
-

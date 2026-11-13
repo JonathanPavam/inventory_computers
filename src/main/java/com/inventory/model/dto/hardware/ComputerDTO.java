@@ -16,7 +16,7 @@ public class ComputerDTO {
     private Ram ram;
     private String macAddress;
     private Storage storage;
-    private String windowsVersopm;
+    private String windowsVersion;
     private String windowsKey;
     private String officeVersion;
     private String officeKey;

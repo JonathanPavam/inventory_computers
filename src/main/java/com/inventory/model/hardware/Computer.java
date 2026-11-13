@@ -25,7 +25,7 @@ public class Computer {
     private Boolean domain;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "model_computer_id", nullable = false)
+    @JoinColumn(name = "model_computer_id")
     private ModelComputer modelComputer;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -40,7 +40,7 @@ public class Computer {
     @JoinColumn(name = "ram_id", nullable = false)
     private Ram ram;
     
-    @Column(name="mac_adress", nullable = false, length = 12)
+    @Column(name="mac_adress", length = 17)
     private String macAddress;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -48,9 +48,9 @@ public class Computer {
     private Storage storage;
     
     @Column(name="windows_version", nullable = false, length = 20)
-    private String windowsVersopm;
+    private String windowsVersion;
     
-    @Column(name="windows_key", length = 20)
+    @Column(name="windows_key", length = 35)
     private String windowsKey;
     
     @Column(name="officeVersion", length = 20)
