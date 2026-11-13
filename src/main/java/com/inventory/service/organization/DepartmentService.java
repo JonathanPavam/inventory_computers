@@ -58,7 +58,7 @@ public class DepartmentService {
         return parseObject(repository.save(entity), DepartmentDTO.class);
     }
     
-    public void delelte(Long id){
+    public void delete(Long id){
         logger.info("Deleting one department");
             var entity = repository.findById(id).orElseThrow(()
         ->new ResourceNotFoundException("No records found for this id;"));

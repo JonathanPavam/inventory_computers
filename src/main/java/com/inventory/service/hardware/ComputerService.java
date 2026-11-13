@@ -59,7 +59,7 @@ public class ComputerService {
         return parseObject(repository.save(entity), ComputerDTO.class);
     }
     
-    public void delelte(Long id){
+    public void delete(Long id){
         logger.info("Deleting one computer");
             var entity = repository.findById(id).orElseThrow(()
         ->new ResourceNotFoundException("No records found for this id;"));

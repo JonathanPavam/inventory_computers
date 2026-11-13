@@ -58,7 +58,7 @@ public class UserService {
         return parseObject(repository.save(entity), UserDTO.class);
     }
     
-    public void delelte(Long id){
+    public void delete(Long id){
         logger.info("Deleting one user");
             var entity = repository.findById(id).orElseThrow(()
         ->new ResourceNotFoundException("No records found for this id;"));

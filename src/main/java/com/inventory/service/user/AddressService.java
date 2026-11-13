@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 
 @Service
 @Transactional 
-public class AAddressService {
+public class AddressService {
     
     @Autowired 
     private AddressRepository repository;
@@ -58,7 +58,7 @@ public class AAddressService {
         return parseObject(repository.save(entity), AddressDTO.class);
     }
     
-    public void delelte(Long id){
+    public void delete(Long id){
         logger.info("Deleting one address");
             var entity = repository.findById(id).orElseThrow(()
         ->new ResourceNotFoundException("No records found for this id;"));
