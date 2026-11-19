@@ -1,0 +1,128 @@
+
+
+
+-- 1. DEPARTMENT
+INSERT INTO department (name) VALUES
+('Tecnologia da Informação'),
+        ('Recursos Humanos'),
+        ('Financeiro'),
+        ('Logística'),
+        ('Produção'),
+        ('Comercial'),
+        ('Compras'),
+        ('Expedição'),
+        ('Manutenção'),
+        ('Controladoria');
+
+        -- 2. POSITION
+INSERT INTO position (name) VALUES
+('Analista de Sistemas'),
+        ('Assistente de TI'),
+        ('Auxiliar de TI'),
+        ('Coordenador de TI'),
+        ('Gerente'),
+        ('Analista Financeiro'),
+        ('Assistente Administrativo'),
+        ('Supervisor de Produção'),
+        ('Analista de RH'),
+        ('Operador de Produção'),
+        ('Analista de Compras'),
+        ('Auxiliar de Logística');
+-- 3. ADDRESS
+INSERT INTO address(cep, country, state, city, neighborhood, street, number)
+VALUES
+('13800-000', 'Brasil', 'São Paulo', 'Mogi Mirim', 'Centro', 'Rua das Flores', '120'),
+('13801-100', 'Brasil', 'São Paulo', 'Mogi Mirim', 'Aterrado', 'Rua Brasil', '250'),
+('13802-200', 'Brasil', 'São Paulo', 'Mogi Mirim', 'Santa Cruz', 'Avenida Paulista', '800'),
+('13900-000', 'Brasil', 'São Paulo', 'Amparo', 'Centro', 'Rua XV de Novembro', '45'),
+('13910-000', 'Brasil', 'São Paulo', 'Amparo', 'Jardim Brasil', 'Rua das Palmeiras', '310'),
+('13840-000', 'Brasil', 'São Paulo', 'Mogi Guaçu', 'Centro', 'Rua São José', '90'),
+('13845-000', 'Brasil', 'São Paulo', 'Mogi Guaçu', 'Jardim Novo', 'Avenida Central', '500'),
+('13920-000', 'Brasil', 'São Paulo', 'Pedreira', 'Centro', 'Rua Antônio Pedro', '75'),
+('13930-000', 'Brasil', 'São Paulo', 'Serra Negra', 'Centro', 'Rua Sete de Setembro', '180'),
+('13870-000', 'Brasil', 'São Paulo', 'São João da Boa Vista', 'Centro', 'Rua General Osório', '400');
+
+
+INSERT INTO model_computer (name) VALUES
+('OptiPlex 7020'),
+('OptiPlex 7010'),
+('ThinkCentre M70'),
+('ProDesk 400 G9'),
+('Vostro 3681'),
+('Latitude 5420'),
+('ThinkPad E14'),
+('EliteBook 840');
+
+
+        -- 6. TYPE_COMPUTER
+INSERT INTO type_computer (type) VALUES
+('Computador'),
+        ('Notebook'),
+        ('Servidor');
+
+
+        -- 7. PROCESSOR
+INSERT INTO processor (name, mark) VALUES
+('Core i5-12400', 'Intel'),
+        ('Core i7-12700', 'Intel'),
+        ('Core i5-10400', 'Intel'),
+        ('Core i3-12100', 'Intel'),
+        ('Ryzen 5 5600G', 'AMD'),
+        ('Ryzen 7 5700G', 'AMD'),
+        ('Core i5-1135G7', 'Intel'),
+        ('Core i7-1255U', 'Intel');
+
+
+        -- 8. RAM
+INSERT INTO ram (name, mark, frequency) VALUES
+('8GB DDR4', 'Kingston', '2666MHz'),
+        ('16GB DDR4', 'Kingston', '3200MHz'),
+        ('8GB DDR4', 'Crucial', '3200MHz'),
+        ('32GB DDR4', 'Corsair', '3200MHz'),
+        ('16GB DDR5', 'Kingston', '4800MHz'),
+        ('8GB DDR5', 'Samsung', '4800MHz'),
+        ('32GB DDR5', 'Crucial', '5200MHz');
+
+
+        -- 9. STORAGE
+INSERT INTO storage (type, size, mark) VALUES
+('SSD', '240GB', 'Kingston'),
+        ('SSD', '480GB', 'Kingston'),
+        ('NVME', '500GB', 'Samsung'),
+        ('NVME', '1TB', 'WD'),
+        ('HD', '1TB', 'Seagate'),
+        ('NVME', '256GB', 'Crucial'),
+        ('SSD', '960GB', 'Kingston');
+
+INSERT INTO USERS
+    (first_name, last_name, username, email, register,
+     address_id, gender_id, department_id, position_id,
+     change_date, change_user)
+VALUES
+('Carlos', 'Silva', 'carlos.silva', 'carlos@empresa.com', '100001', 1, 'Masculino', 1, 1, '2026-01-10', 'admin'),
+('Mariana', 'Oliveira', 'mariana.oliveira', 'mariana@empresa.com', '100002', 2, 'Feminino', 1, 2, '2026-01-10', 'admin'),
+('João', 'Santos', 'joao.santos', 'joao@empresa.com', '100003', 3, 'Masculino', 1, 3, '2026-01-10', 'admin'),
+('Fernanda', 'Costa', 'fernanda.costa', 'fernanda@empresa.com', '100004', 4, 'Feminino', 2, 9, '2026-01-10', 'admin'),
+('Ricardo', 'Almeida', 'ricardo.almeida', 'ricardo@empresa.com', '100005', 5, 'Masculino', 3, 6, '2026-01-10', 'admin'),
+('Juliana', 'Ferreira', 'juliana.ferreira', 'juliana@empresa.com', '100006', 6, 'Feminino', 4, 12, '2026-01-10', 'admin'),
+('Pedro', 'Rodrigues', 'pedro.rodrigues', 'pedro@empresa.com', '100007', 7, 'Masculino', 5, 10, '2026-01-10', 'admin'),
+('Amanda', 'Lima', 'amanda.lima', 'amanda@empresa.com', '100008', 8, 'Feminino', 6, 7, '2026-01-10', 'admin'),
+('Lucas', 'Martins', 'lucas.martins', 'lucas@empresa.com', '100009', 9, 'Masculino', 7, 11, '2026-01-10', 'admin'),
+('Beatriz', 'Souza', 'beatriz.souza', 'beatriz@empresa.com', '100010', 10, 'Feminino', 8, 12, '2026-01-10', 'admin');
+
+-- 10. COMPUTER
+INSERT INTO computer
+        (name_tag, user_id, domain, model_computer_id, type_computer_id,
+         processor_id, ram_id, mac_address, storage_id,
+         windows_version, windows_key, office_version, office_key, antivirus)
+VALUES
+('PC0001', 1, TRUE, 1, 1, 1, 2, '00:00:00:00:00:01', 3, 'Windows 11 Pro', NULL, 'Office 2021', NULL, TRUE),
+('PC0002', 2, TRUE, 2, 1, 2, 4, '00:00:00:00:00:02', 4, 'Windows 11 Pro', NULL, 'Microsoft 365', NULL, TRUE),
+('PC0003', 3, TRUE, 1, 1, 3, 1, '00:00:00:00:00:03', 1, 'Windows 10 Pro', NULL, 'Office 2019', NULL, TRUE),
+('PC0004', 4, TRUE, 6, 2, 7, 2, '00:00:00:00:00:04', 3, 'Windows 11 Pro', NULL, 'Microsoft 365', NULL, TRUE),
+('PC0005', 5, TRUE, 1, 1, 1, 2, '00:00:00:00:00:05', 2, 'Windows 11 Pro', NULL, 'Office 2021', NULL, TRUE),
+('PC0006', 6, TRUE, 3, 1, 5, 3, '00:00:00:00:00:06', 6, 'Windows 10 Pro', NULL, 'Office 2019', NULL, TRUE),
+('PC0007', 7, FALSE, 4, 1, 4, 1, '00:00:00:00:00:07', 1, 'Windows 10 Pro', NULL, NULL, NULL, FALSE),
+('PC0008', 8, TRUE, 7, 2, 8, 5, '00:00:00:00:00:08', 4, 'Windows 11 Pro', NULL, 'Microsoft 365', NULL, TRUE),
+('PC0009', 9, TRUE, 5, 1, 6, 4, '00:00:00:00:00:09', 3, 'Windows 11 Pro', NULL, 'Office 2021', NULL, TRUE),
+('PC0010', 10, FALSE, 2, 1, 3, 2, '00:00:00:00:00:10', 5, 'Windows 10 Pro', NULL, NULL, NULL, FALSE);

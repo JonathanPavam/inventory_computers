@@ -1,0 +1,92 @@
+CREATE TABLE department (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE position (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE address (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    cep VARCHAR(80) NOT NULL,
+    country VARCHAR(80) NOT NULL,
+    state VARCHAR(80) NOT NULL,
+    city VARCHAR(80) NOT NULL,
+    neighborhood VARCHAR(80) NOT NULL,
+    street VARCHAR(80) NOT NULL,
+    number VARCHAR(80) NOT NULL
+);
+
+CREATE TABLE users (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(85) NOT NULL,
+    last_name VARCHAR(85) NOT NULL,
+    user VARCHAR(85) NOT NULL,
+    email VARCHAR(85) NOT NULL UNIQUE,
+    register VARCHAR(6),
+    gender VARCHAR(30) NOT NULL,
+    address_id BIGINT NOT NULL,
+    department_id BIGINT NOT NULL,
+    position_id BIGINT NOT NULL,
+    change_date DATE,
+    change_user VARCHAR(85),
+    CONSTRAINT fk_user_address FOREIGN KEY (address_id) REFERENCES address(id),
+    CONSTRAINT fk_user_department FOREIGN KEY (department_id) REFERENCES department(id),
+    CONSTRAINT fk_user_position FOREIGN KEY (position_id) REFERENCES position(id)
+);
+
+CREATE TABLE model_computer (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE type_computer (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    type VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE processor (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    mark VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE ram (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    mark VARCHAR(50) NOT NULL,
+    frequency VARCHAR(10)
+);
+
+CREATE TABLE storage (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    type VARCHAR(50) NOT NULL,
+    size VARCHAR(50) NOT NULL,
+    mark VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE computer (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name_tag VARCHAR(10) NOT NULL UNIQUE,
+    user_id BIGINT NOT NULL,
+    domain TINYINT(1) NOT NULL,
+    model_computer_id BIGINT NOT NULL,
+    type_computer_id BIGINT NOT NULL,
+    processor_id BIGINT NOT NULL,
+    ram_id BIGINT NOT NULL,
+    mac_address VARCHAR(17) NOT NULL UNIQUE,
+    storage_id BIGINT NOT NULL,
+    windows_version VARCHAR(20) NOT NULL,
+    windows_key VARCHAR(35),
+    office_version VARCHAR(20),
+    office_key VARCHAR(35),
+    antivirus TINYINT(1) NOT NULL,
+    CONSTRAINT fk_computer_user FOREIGN KEY (user_id) REFERENCES users(id),
+    CONSTRAINT fk_computer_model FOREIGN KEY (model_computer_id) REFERENCES model_computer(id),
+    CONSTRAINT fk_computer_type FOREIGN KEY (type_computer_id) REFERENCES type_computer(id),
+    CONSTRAINT fk_computer_processor FOREIGN KEY (processor_id) REFERENCES processor(id),
+    CONSTRAINT fk_computer_ram FOREIGN KEY (ram_id) REFERENCES ram(id),
+    CONSTRAINT fk_computer_storage FOREIGN KEY (storage_id) REFERENCES storage(id)
+);
