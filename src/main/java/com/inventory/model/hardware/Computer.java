@@ -40,7 +40,7 @@ public class Computer {
     @JoinColumn(name = "ram_id", nullable = false)
     private Ram ram;
     
-    @Column(name="mac_adress", length = 17)
+    @Column(name="mac_address", length = 17)
     private String macAddress;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -53,12 +53,12 @@ public class Computer {
     @Column(name="windows_key", length = 35)
     private String windowsKey;
     
-    @Column(name="officeVersion", length = 20)
+    @Column(name="office_version", length = 20)
     private String officeVersion;
     
     @Column(name="office_key", length = 20)
     private String officeKey;
     
-    @Column(name="antivirus", nullable = false, length = 20)
+    @Column(name="antivirus", nullable = false)
     private Boolean antivirus;
 }
