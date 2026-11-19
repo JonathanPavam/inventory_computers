@@ -1,0 +1,36 @@
+<div class = "layout-wrapper">
+<aside class="sidebar" [class.closed]="!openMenu">
+  <div class="sidebar-header">
+          @if(openMenu){
+            <span>Controle TI</span>
+          <button class = "btn-toggle open" (click) = "alterMenu()">
+            ↩
+          </button>
+        }
+
+          @if(!openMenu){
+          <button class = "btn-toggle closed" (click) = "alterMenu()">
+            ☰
+          </button>
+        }
+      </div>
+
+      <nav class = "sidebar-items">
+          @if(openMenu){
+        <a href="#" class="nav-item">
+        <img src="image/computer.png" alt="computer icon" width="20">
+          <span>  </span>
+            <span>Computadores</span>
+        </a>
+      <a href="#" class="nav-item">
+        <img src="image/smartphone.png" alt="smartphoone icon" width="20">
+          <span>Smartphones</span>
+
+      </a>
+        <a href="#" class="nav-item">
+        <img src="image/finan.png" alt="finan icon" width="20">
+        <span>Controle</span>
+      </a>
+    }
+    </nav>
+  </aside>

@@ -1,0 +1,110 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.layout-wrapper{
+    display: flex;
+    min-height: 100vh;
+    font-family: '''Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*style menu*/
+.sidebar{
+height: 100vh;
+width: 240px;
+background-color: #26a47b;
+color: white;
+display: flex;
+flex-direction: column;
+transition: all 0.3s ease;
+}
+
+
+
+
+
+/*menu: column closed*/
+.sidebar-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 0 15px;
+}
+
+.sidebar.closed{
+    background-color: #26a47b;
+    width: 60px;
+}
+
+
+/*menu: column closed*/
+.sidebar-header.closed{
+    width: 60px;
+    justify-content: space-between; 
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    padding: 15px;
+}
+
+
+/*menu: open button <-*/
+.btn-toggle.open {
+    position: absolute;
+    right: 15px; 
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+.btn-toggle.open:hover {
+    color: #2e9271;
+}
+
+/*menu: open button ☰*/
+.btn-toggle.closed{
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+.btn-toggle.closed:hover {
+    color: #2e9271;
+}
+
+/*menu: options*/
+.sidebar-items{
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    flex: 1;
+}
+
+.nav-item{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    color: white;
+    font-family: "Segoe UI", "Open Sans", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.nav-item:hover{
+    background-color: #2e9271;
+    color: white;
+}
+
+.sidebar.closed .nav-item{
+    justify-content: center;
+    padding: 14px 0;
+}
+
