@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table  (name="user")
+@Table  (name="users")
 @Data 
 public class User implements Serializable{
     
@@ -23,7 +23,7 @@ public class User implements Serializable{
     @Column (name="last_name", nullable = false, length = 85)
     private String last_name;
     
-    @Column (name="user", nullable = false, length = 85)
+    @Column (name="username", nullable = false, length = 85)
     private String user;
     
     @Column (name="email", nullable = false, length = 85)
@@ -37,7 +37,7 @@ public class User implements Serializable{
     private Address address;
 
     @Enumerated(EnumType.STRING)
-    @JoinColumn(name = "gender_id", nullable = false)
+    @Column(name = "gender_id", nullable = false)
     private Gender gender;
 
     @ManyToOne(fetch = FetchType.LAZY)
