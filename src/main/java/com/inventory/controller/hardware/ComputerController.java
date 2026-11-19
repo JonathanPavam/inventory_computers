@@ -36,7 +36,7 @@ public class ComputerController {
             MediaType.APPLICATION_JSON_VALUE,
             MediaType.APPLICATION_XML_VALUE,
             MediaType.APPLICATION_YAML_VALUE})
-    public ResponseEntity<ComputerDTO> findById(Long id) {
+    public ResponseEntity<ComputerDTO> findById(@PathVariable("id")Long id) {
         return ResponseEntity.ok(service.findById(id));
     }
     
